@@ -6,7 +6,7 @@
 
 namespace syscaller
 {
-	__forceinline auto GetModule(const wchar_t* module_name) -> std::uint64_t
+	inline auto GetModule(const wchar_t* module_name) -> std::uint64_t
 	{
 		PLDR_DATA_TABLE_ENTRY lib = (PLDR_DATA_TABLE_ENTRY)(direct::__peb_ldte());
 
@@ -50,7 +50,7 @@ namespace syscaller
 		return { };
 	}
 
-	__forceinline auto GetFunction(const wchar_t* module_name, const char* function_name) -> std::uint64_t
+	inline auto GetFunction(const wchar_t* module_name, const char* function_name) -> std::uint64_t
 	{
 		auto module_address = syscaller::GetModule(module_name);
 		if (!module_address)
@@ -108,7 +108,7 @@ namespace syscaller
 		return 0x0;
 	}
 
-	__forceinline auto GetIdx(const wchar_t* module_name, const char* function_name) -> const std::uint32_t
+	inline auto GetIdx(const wchar_t* module_name, const char* function_name) -> const std::uint32_t
 	{
 		auto exported_function = GetFunction(module_name, function_name);
 		if (!exported_function)
