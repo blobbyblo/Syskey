@@ -1,3 +1,8 @@
+# Explanation and Analysis
+
+You can view the writeup I did over this project over at my blog.
+https://bobbyobrien.com/posts/syskey/
+
 # Syskey
 
 Syskey is a simple NtUserGetAsyncKeyState syscall wrapper.
